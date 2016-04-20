@@ -14,6 +14,7 @@ $(function () {
     var $rgbaInputs = $('#red, #green, #blue, #alpha');
 
     $rgbaInputs.change(function () {
+        console.log('hmmm');
         var strings = $rgbaInputs.map(function () {return $(this).val();});
         var floats = strings.map(parseFloat);
         if (floats.filter(isValidFloat).length === 4) {

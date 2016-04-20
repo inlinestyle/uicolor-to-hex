@@ -16,8 +16,11 @@ $(function () {
     $rgbaInputs.change(function () {
         console.log('hmmm');
         var strings = $rgbaInputs.map(function () {return $(this).val();});
+        console.log(strings);
         var floats = strings.map(parseFloat);
+        console.log(floats);
         if (floats.filter(isValidFloat).length === 4) {
+            console.log('arg');
             $('#hex').val(uicolorToHex.apply(this, floats));
         }
     });

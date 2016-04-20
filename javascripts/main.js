@@ -17,7 +17,7 @@ $(function () {
         console.log('hmmm');
         var strings = $rgbaInputs.map(function () {return $(this).val();});
         console.log(strings);
-        var floats = strings.map(parseFloat);
+        var floats = strings.map(function (string) {return parseFloat(string);});
         console.log(floats);
         if (floats.filter(isValidFloat).length === 4) {
             console.log('arg');

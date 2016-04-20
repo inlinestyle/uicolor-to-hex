@@ -14,13 +14,9 @@ $(function () {
     var $rgbaInputs = $('#red, #green, #blue, #alpha');
 
     $rgbaInputs.change(function () {
-        console.log('hmmm');
-        var strings = $rgbaInputs.map(function () {return $(this).val();});
-        console.log(strings);
+        var strings = $rgbaInputs.map(function () {return $(this).val();}).toArray();
         var floats = strings.map(function (string) {return parseFloat(string);});
-        console.log(floats);
         if (floats.filter(isValidFloat).length === 4) {
-            console.log('arg');
             $('#hex').val(uicolorToHex.apply(this, floats));
         }
     });

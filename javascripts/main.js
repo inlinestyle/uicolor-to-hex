@@ -1,5 +1,5 @@
 var uicolorComponentToHex = function (component) {
-    return ("0" + parseInt((component * 255).toString(16))).slice(-2);
+    return ("0" + parseInt(component * 255).toString(16)).slice(-2);
 };
 
 var uicolorToHex = function (red, green, blue, alpha) {

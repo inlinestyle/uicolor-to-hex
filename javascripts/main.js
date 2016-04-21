@@ -13,11 +13,13 @@ var isValidFloat = function(float) {
 $(function () {
     var $rgbaInputs = $('#red, #green, #blue, #alpha');
 
-    $rgbaInputs.change(function () {
+    $rgbaInputs.keyup(function () {
         var strings = $rgbaInputs.map(function () {return $(this).val();}).toArray();
         var floats = strings.map(function (string) {return parseFloat(string);});
         if (floats.filter(isValidFloat).length === 4) {
             $('#hex').val(uicolorToHex.apply(this, floats));
         }
     });
+
+
 });

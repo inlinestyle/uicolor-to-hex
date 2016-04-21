@@ -12,7 +12,6 @@ var isValidFloat = function(float) {
 
 $(function () {
     var $rgbaInputs = $('#red, #green, #blue, #alpha');
-
     $rgbaInputs.keyup(function () {
         var strings = $rgbaInputs.map(function () {return $(this).val();}).toArray();
         var floats = strings.map(function (string) {return parseFloat(string);});
@@ -20,6 +19,5 @@ $(function () {
             $('#hex').val(uicolorToHex.apply(this, floats));
         }
     });
-
-
+    $rgbaInputs.keyup();
 });
